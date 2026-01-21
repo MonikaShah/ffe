@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+
+{% block content %}
+<section class="achievements">
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.intro %}
+        {{ page.intro|richtext }}
+    {% endif %}
+
+    <div class="achievements-grid">
+        {% for block in page.achievements %}
+            <div class="achievement-card">
+                {% if block.value.image %}
+                    <img src="{{ block.value.image.url }}" alt="{{ block.value.title }}">
+                {% endif %}
+                <h3>{{ block.value.title }}</h3>
+                <p>{{ block.value.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

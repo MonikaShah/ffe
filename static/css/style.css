@@ -1,0 +1,180 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #f8f9fb;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #0a4fa3;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1c6fd5, #0a4fa3);
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #ff9800;
+  padding: 12px 26px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+
+/* ICON MENU */
+.icon-menu {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.icon-menu a {
+  flex: 1;
+  background: white;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #0a4fa3;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* CARDS */
+.cards {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* FAQ */
+.faq {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq h2 {
+  margin-bottom: 20px;
+}
+
+.faq details {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+footer {
+  background: #0a4fa3;
+  color: white;
+  padding: 20px 0;
+  margin-top: 60px;
+  text-align: center;
+}
+.intro {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.achievement-body {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .icon-menu {
+    flex-direction: column;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

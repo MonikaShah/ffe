@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Forum for Fairness in Education{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <a href="/">
+        <img src="{% static 'images/logo.jpg' %}" alt="Forum for Fairness in Education">
+      </a>
+    </div>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pages/about/">About</a>
+      <a href="/pages/downloads/">Downloads</a>
+      <a href="/pages/faq/">FAQ</a>
+      <a href="/pages/achievements/">Achievements</a>
+      <a href="/login/">Login</a>
+    </nav>
+  </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer>
+  <div class="container">
+    © 2026 Forum for Fairness in Education
+  </div>
+</footer>
+
+</body>

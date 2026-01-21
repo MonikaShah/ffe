@@ -1,0 +1,23 @@
+{% extends "wagtailadmin/login.html" %}
+{% load static %}
+
+{% block branding_logo %}
+<div style="text-align:center; margin-bottom:1rem;">
+    <img src="{% static 'images/logo.jpg' %}" alt="Forum Logo" style="max-height:100px; width:auto;">
+</div>
+{% endblock %}
+
+{% block content_title %}
+Sign in to your FFE account
+{% endblock %}
+
+{% block content_subtitle %}
+Please enter your credentials to access the admin dashboard.
+{% endblock %}
+
+{% block extra_head %}
+{{ block.super }}
+<script>
+    document.title = "Forum for Fairness in Education";
+</script>
+{% endblock %}

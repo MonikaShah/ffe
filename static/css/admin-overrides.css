@@ -1,0 +1,8 @@
+.wagtail-logo {
+    background-image: url('/static/images/logo.jpg') !important;
+    background-size: contain;
+    width: 150px;
+}
+.sidebar-wagtail-branding__icon {
+    display: none !important;
+}
