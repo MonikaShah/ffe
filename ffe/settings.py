@@ -175,9 +175,5 @@ WAGTAIL_ADMIN_LOGO_WHITE = "images/logo.jpg"  # for topbar / dark mode
 WAGTAIL_ADMIN_CUSTOM_CSS = "css/admin-overrides.css"
 
 
-
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "static"
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
