@@ -159,6 +159,22 @@ footer {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+.rich-text p {
+    text-indent: 2em;   /* or 30px */
+}
+.achievement-card {
+  padding-left: 2em;
+}
+
+.achievement-title {
+  margin-bottom: 0.5em;
+}
+
+.achievement-text p {
+  text-indent: 2em;
+}
+
+
 
 /* MOBILE */
 @media (max-width: 768px) {

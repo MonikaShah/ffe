@@ -5,11 +5,15 @@
 
 {% block content %}
 <section class="achievements">
+ <div class="container achievement-body">
 
     <h1>{{ page.title }}</h1>
 
     {% if page.intro %}
-        {{ page.intro|richtext }}
+       <div class="rich-text intro-text">
+            {{ page.intro|richtext }}
+       </div>
+
     {% endif %}
 
     <div class="achievements-grid">
@@ -19,10 +23,15 @@
                     <img src="{{ block.value.image.url }}" alt="{{ block.value.title }}">
                 {% endif %}
                 <h3>{{ block.value.title }}</h3>
-                <p>{{ block.value.description }}</p>
+
+                <div class="rich-text achievement-text">
+                    {{ block.value.description|richtext }}
+                </div>
+
             </div>
         {% endfor %}
     </div>
+ </div>
 
 </section>
 {% endblock %}
