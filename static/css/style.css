@@ -215,8 +215,33 @@ html, body {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  /* Mobile navigation - horizontal toggle */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   nav {
-    display: none;
+    display: flex;
+    flex-direction: column;  /* stack links */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 5px 0;
+    padding: 10px 15px;
+    width: 100%;
+    background: white;
+    color: #0a4fa3;
+    text-align: left;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  nav a:hover {
+    background: #e1e7f0;
+    text-decoration: none;
   }
 
   .hero h1 {
@@ -229,5 +254,16 @@ html, body {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  /* Make main content full width and properly padded */
+  .site-content > * {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .page-container {
+    padding: 20px 15px;
   }
 }
