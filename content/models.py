@@ -1,13 +1,13 @@
-from wagtail.models import Page
+from wagtail.models import Page,Orderable
 from wagtail.fields import StreamField, RichTextField
 from wagtail import blocks
 
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel,InlinePanel
 from wagtail.blocks import StructBlock, CharBlock, RichTextBlock,URLBlock
 from django.db import models
 from wagtail.documents.models import Document
-
+from modelcluster.fields import ParentalKey
 class HomePage(Page):
     """
     CMS container home page.
@@ -144,22 +144,36 @@ class GRPage(Page):
         FieldPanel('document'),
     ]
 
+class RTIDocument(Orderable):
+    page = ParentalKey(
+        'content.RTIPage',
+        on_delete=models.CASCADE,
+        related_name='documents'
+    )
+
+    title = models.CharField(
+        max_length=255,
+        help_text="Document title shown to users"
+    )
+
+    document = models.ForeignKey(
+        Document,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('document'),
+    ]
+    
 class RTIPage(Page):
     custom_title = models.CharField(
         max_length=255,
         help_text="Title displayed on the page"
     )
 
-    document = models.ForeignKey(
-        Document,
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text="Upload PDF or DOC file"
-    )
-
     content_panels = Page.content_panels + [
         FieldPanel('custom_title'),
-        FieldPanel('document'),
-    ]        
+        InlinePanel('documents', label="RTI Documents"),
+    ]
