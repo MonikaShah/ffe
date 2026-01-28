@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
-  <h1>{{ page.custom_title }}</h1>
+<main class="site-content">
+  <div class="page-container">
+  {% block content %}
+    <h1>{{ page.custom_title }}</h1>
 
-  {% if page.rti_documents.all %}
-    <ul class="rti-documents">
-      {% for item in page.rti_documents.all %}
-        <li>
-          📄
-          <a href="{{ item.document.url }}" target="_blank">
-            {{ item.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No document uploaded.</p>
-  {% endif %}
-{% endblock %}
+    {% if page.rti_documents.all %}
+      <ul class="rti-documents">
+        {% for item in page.rti_documents.all %}
+          <li>
+            📄
+            <a href="{{ item.document.url }}" target="_blank">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No document uploaded.</p>
+    {% endif %}
+  {% endblock %}
+</div>
+</main>

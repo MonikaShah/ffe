@@ -185,9 +185,9 @@ html, body {
 }
 
 .site-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-content {
@@ -201,6 +201,16 @@ html, body {
   width: 100%;
   max-width: 1100px;
 }
+.page-container {
+  max-width: 900px;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.page-container h1 {
+  text-align: center;   /* optional */
+}
+
 
 
 /* MOBILE */
