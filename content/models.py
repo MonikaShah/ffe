@@ -5,6 +5,8 @@ from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.admin.panels import FieldPanel
 from wagtail.blocks import StructBlock, CharBlock, RichTextBlock,URLBlock
+from django.db import models
+from wagtail.documents.models import Document
 
 class HomePage(Page):
     """
@@ -121,3 +123,43 @@ class MediaUpdatesPage(Page):
 
     parent_page_types = ["wagtailcore.Page"]
     subpage_types = []
+
+class GRPage(Page):
+    custom_title = models.CharField(
+        max_length=255,
+        help_text="Title displayed on the page"
+    )
+
+    document = models.ForeignKey(
+        Document,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text="Upload PDF or DOC file"
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('custom_title'),
+        FieldPanel('document'),
+    ]
+
+class RTIPage(Page):
+    custom_title = models.CharField(
+        max_length=255,
+        help_text="Title displayed on the page"
+    )
+
+    document = models.ForeignKey(
+        Document,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        help_text="Upload PDF or DOC file"
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('custom_title'),
+        FieldPanel('document'),
+    ]        
