@@ -146,9 +146,9 @@ class GRPage(Page):
 
 class RTIDocument(Orderable):
     page = ParentalKey(
-        'content.RTIPage',
+        'RTIPage',
         on_delete=models.CASCADE,
-        related_name='documents'
+        related_name='rti_documents'
     )
 
     title = models.CharField(
@@ -175,5 +175,5 @@ class RTIPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('custom_title'),
-        InlinePanel('documents', label="RTI Documents"),
+        InlinePanel('rti_documents', label="RTI Documents"),
     ]
