@@ -173,14 +173,21 @@ footer {
 .achievement-text p {
   text-indent: 2em;
 }
-html, body {
-  height: 100%;
-}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .site-content {
