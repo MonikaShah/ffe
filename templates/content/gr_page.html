@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{{ page.custom_title }}</h1>
+  <div class="page-container">
 
-  {% if page.document %}
-    <p>
-      📄 <a href="{{ page.document.url }}" target="_blank">
-        Download document
-      </a>
-    </p>
-  {% else %}
-    <p>No document uploaded.</p>
-  {% endif %}
+    <h1>{{ page.custom_title }}</h1>
+
+    {% if page.gr_documents.all %}
+      <ul class="rti-documents">
+        {% for item in page.gr_documents.all %}
+          <li>
+            📄
+            <a href="{{ item.document.url }}" target="_blank">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No documents uploaded.</p>
+    {% endif %}
+
+  </div>
 {% endblock %}

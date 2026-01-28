@@ -123,6 +123,28 @@ class MediaUpdatesPage(Page):
 
     parent_page_types = ["wagtailcore.Page"]
     subpage_types = []
+class GRDocument(Orderable):
+    page = ParentalKey(
+        'GRPage',
+        on_delete=models.CASCADE,
+        related_name='gr_documents'
+    )
+
+    title = models.CharField(
+        max_length=255,
+        help_text="Document title shown to users"
+    )
+
+    document = models.ForeignKey(
+        Document,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('document'),
+    ]
 
 class GRPage(Page):
     custom_title = models.CharField(
@@ -130,19 +152,14 @@ class GRPage(Page):
         help_text="Title displayed on the page"
     )
 
-    document = models.ForeignKey(
-        Document,
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        help_text="Upload PDF or DOC file"
-    )
-
     content_panels = Page.content_panels + [
         FieldPanel('custom_title'),
-        FieldPanel('document'),
+        InlinePanel('gr_documents', label="GR Documents"),
     ]
+
+    parent_page_types = ["wagtailcore.Page"]
+    subpage_types = []
+
 
 class RTIDocument(Orderable):
     page = ParentalKey(
