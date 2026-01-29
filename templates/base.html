@@ -11,8 +11,9 @@
 
 <body>
 
-<div class="site-wrapper">
+<div class="page-wrapper">
 
+  <!-- HEADER -->
   <header class="navbar">
     <div class="nav-inner">
       <div class="logo">
@@ -21,24 +22,26 @@
         </a>
       </div>
 
-      <nav>
+      <nav class="main-nav">
         <a href="/">Home</a>
         <a href="/pages/about/">About</a>
         <a href="/pages/gr/">GR</a>
         <a href="/pages/right-to-information/">RTI / RTE</a>
-        <!-- <a href="/pages/faq/">FAQ</a> -->
         <a href="/pages/achievements/">Achievements</a>
         <a href="/pages/media-updates/">Media Updates</a>
+        <a href="/pages/contact-us/">Contact Us</a>
         <a href="/login/">Login</a>
       </nav>
     </div>
   </header>
 
-  <main class="site-content">
+  <!-- CONTENT -->
+  <main class="site-main">
     {% block content %}{% endblock %}
   </main>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container">
       © 2026 Forum for Fairness in Education
     </div>

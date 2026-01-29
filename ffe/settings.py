@@ -177,3 +177,10 @@ WAGTAIL_ADMIN_CUSTOM_CSS = "css/admin-overrides.css"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+
+INSTALLED_APPS += ['widget_tweaks']
+RECAPTCHA_PUBLIC_KEY = "6Leh0VksAAAAAGIFhTjuf_COwFAs0BD5a4Tp4aa8"
+RECAPTCHA_PRIVATE_KEY = "6Leh0VksAAAAAIXbL3ohofp_sZfH04BSJ0hqQIH3"
+
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
