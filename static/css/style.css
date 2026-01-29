@@ -1,23 +1,38 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   color: #222;
   background: #f8f9fb;
 }
 
-/* CONTAINER */
+/* ================= PAGE WRAPPER (FOOTER FIX) ================= */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* ================= CONTAINER ================= */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 0 20px;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
   background: #0a4fa3;
 }
@@ -33,24 +48,23 @@ body {
 
 .logo img {
   height: 70px;
-  width: auto;
 }
 
-nav a {
-  color: white;
+.main-nav a {
+  color: #fff;
   text-decoration: none;
   margin-left: 22px;
   font-weight: 500;
 }
 
-nav a:hover {
+.main-nav a:hover {
   text-decoration: underline;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   background: linear-gradient(135deg, #1c6fd5, #0a4fa3);
-  color: white;
+  color: #fff;
   padding: 90px 20px;
   text-align: center;
 }
@@ -62,16 +76,15 @@ nav a:hover {
 
 .hero p {
   font-size: 18px;
-  opacity: 0.95;
   margin-bottom: 25px;
 }
 
+/* ================= BUTTON ================= */
 .btn {
-  display: inline-block;
   background: #ff9800;
+  color: #fff;
   padding: 12px 26px;
   border-radius: 4px;
-  color: white;
   text-decoration: none;
   font-weight: 600;
 }
@@ -80,29 +93,28 @@ nav a:hover {
   background: #e68900;
 }
 
-/* ICON MENU */
+/* ================= ICON MENU ================= */
 .icon-menu {
   max-width: 1100px;
   margin: 30px auto;
   display: flex;
-  justify-content: space-between;
   gap: 15px;
   padding: 0 20px;
 }
 
 .icon-menu a {
   flex: 1;
-  background: white;
+  background: #fff;
   padding: 14px;
   text-align: center;
   text-decoration: none;
   color: #0a4fa3;
   font-weight: 600;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
 .cards {
   max-width: 1100px;
   margin: 40px auto;
@@ -113,85 +125,96 @@ nav a:hover {
 }
 
 .card {
-  background: white;
+  background: #fff;
   padding: 30px;
   border-radius: 8px;
   text-align: center;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 
-/* FAQ */
-.faq {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.faq h2 {
-  margin-bottom: 20px;
-}
-
-.faq details {
-  background: white;
-  padding: 15px 20px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-/* FOOTER */
-footer {
-  background: #0a4fa3;
-  color: white;
-  padding: 20px 0;
-  margin-top: 60px;
-  text-align: center;
-}
+/* ================= ACHIEVEMENTS ================= */
 .intro {
   font-size: 18px;
   margin-bottom: 25px;
 }
 
 .achievement-body {
-  background: white;
+  background: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
+
 .rich-text p {
-    text-indent: 2em;   /* or 30px */
-}
-.achievement-card {
-  padding-left: 2em;
-}
-
-.achievement-title {
-  margin-bottom: 0.5em;
-}
-
-.achievement-text p {
   text-indent: 2em;
 }
-html, body {
-  height: 100%;
-}
 
-body {
+/* ================= CONTACT FORM ================= */
+.contact-wrapper {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
+  padding: 60px 20px;
 }
 
-.site-content {
-  flex: 1;
+.contact-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 
+.contact-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
 
-/* MOBILE */
+.contact-card textarea {
+  resize: vertical;
+}
+
+.captcha-box {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.btn-submit {
+  background: #ff9800;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #e68900;
+}
+
+/* ================= FOOTER ================= */
+.site-footer {
+  background: #0a4fa3;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-  nav {
+
+  .main-nav {
     display: none;
   }
 
@@ -205,5 +228,10 @@ body {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .g-recaptcha {
+    transform: scale(0.9);
+    transform-origin: center;
   }
 }
