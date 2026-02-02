@@ -202,6 +202,25 @@ body {
 .btn-submit:hover {
   background: #e68900;
 }
+/* ========================RTI Page========== */
+.page-container {
+  max-width: 800px;      /* optional, keeps content readable */
+  margin: 0 auto;        /* center horizontally */
+  text-align: center;    /* center the title, links, and emojis */
+  padding: 20px;
+}
+
+.rti-documents {
+  list-style: none;       /* remove default bullets */
+  padding: 0;
+  margin: 20px 0;        /* space above/below the list */
+}
+
+.rti-documents li {
+  margin: 10px 0;        /* spacing between items */
+  font-size: 18px;
+  display: inline-block;  /* keeps items centered nicely */
+}
 
 /* ================= FOOTER ================= */
 .site-footer {
@@ -209,6 +228,27 @@ body {
   color: #fff;
   text-align: center;
   padding: 20px 0;
+}
+.gallery-grid,
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.event-card,
+.photo-item {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 10px;
+}
+
+.caption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
 }
 
 /* ================= MOBILE ================= */
