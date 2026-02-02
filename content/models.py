@@ -3,6 +3,9 @@ from django.conf import settings
 from wagtail.models import Page,Orderable
 from wagtail.fields import StreamField, RichTextField
 from wagtail import blocks
+from wagtail.images.models import Image
+from modelcluster.models import ClusterableModel
+from wagtail.snippets.models import register_snippet
 from django.http import JsonResponse
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.admin.panels import FieldPanel,InlinePanel
@@ -280,3 +283,39 @@ class ContactPage(AbstractEmailForm):
 
         # ✅ NORMAL Wagtail rendering
         return super().serve(request)
+class PhotoGalleryIndexPage(Page):
+    intro = models.TextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("intro"),
+    ]
+
+    subpage_types = ["content.PhotoGalleryEventPage"]
+class PhotoGalleryEventPage(Page):
+    event_date = models.DateField(null=True, blank=True)
+    description = models.TextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("event_date"),
+        FieldPanel("description"),
+        InlinePanel("gallery_images", label="Event Photos"),
+    ]
+
+    parent_page_types = ["content.PhotoGalleryIndexPage"]
+class PhotoGalleryImage(models.Model):
+    page = ParentalKey(
+        PhotoGalleryEventPage,
+        related_name="gallery_images",
+        on_delete=models.CASCADE
+    )
+    image = models.ForeignKey(
+        Image,
+        on_delete=models.CASCADE,
+        related_name="+"
+    )
+    caption = models.CharField(max_length=250, blank=True)
+
+    panels = [
+        FieldPanel("image"),
+        FieldPanel("caption"),
+    ]

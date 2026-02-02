@@ -21,6 +21,8 @@ from core import views
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+from django.conf import settings
+from django.views.static import serve
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -38,4 +40,9 @@ urlpatterns = [
     path("cms/", include(wagtailadmin_urls)),
     path("pages/", include(wagtail_urls)),
     path("documents/", include(wagtaildocs_urls)),  # 🔴 THIS LINE IS REQUIRED
+    path(
+        "media/<path:path>",
+        serve,
+        {"document_root": settings.MEDIA_ROOT},
+    ),
 ]

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="achievements">
+
   <div class="page-container">
 
     <h1>{{ page.custom_title }}</h1>
@@ -9,7 +11,7 @@
       <ul class="rti-documents">
         {% for item in page.gr_documents.all %}
           <li>
-            📄
+            
             <a href="{{ item.document.url }}" target="_blank">
               {{ item.title }}
             </a>
@@ -21,4 +23,5 @@
     {% endif %}
 
   </div>
+  </section>
 {% endblock %}

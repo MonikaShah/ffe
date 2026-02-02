@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+<div class="container">
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+
+  <div class="photo-grid">
+    {% for item in page.gallery_images.all %}
+      <div class="photo-item">
+        {% image item.image fill-400x300 %}
+        {% if item.caption %}
+          <p class="caption">{{ item.caption }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
