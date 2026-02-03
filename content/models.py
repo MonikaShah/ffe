@@ -11,7 +11,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.admin.panels import FieldPanel,InlinePanel
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 from wagtail.contrib.forms.panels import FormSubmissionsPanel
-from wagtail.blocks import StructBlock, CharBlock, RichTextBlock,URLBlock
+from wagtail.blocks import StructBlock, CharBlock, RichTextBlock,URLBlock,TextBlock
 from django.db import models
 from wagtail.documents.models import Document
 from modelcluster.fields import ParentalKey
@@ -319,3 +319,33 @@ class PhotoGalleryImage(models.Model):
         FieldPanel("image"),
         FieldPanel("caption"),
     ]
+class ObjectiveBlock(StructBlock):
+    title = CharBlock(required=True, max_length=150)
+    description = TextBlock(required=True)
+    icon = CharBlock(
+        required=False,
+        help_text="FontAwesome icon class (e.g. fa-solid fa-seedling)"
+    )
+
+    class Meta:
+        icon = "target"
+        label = "Objective"
+
+
+class ObjectivesPage(Page):
+    intro = RichTextField(blank=True)
+
+    objectives = StreamField(
+        [
+            ("objective", ObjectiveBlock()),
+        ],
+        use_json_field=True,
+        blank=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("intro"),
+        FieldPanel("objectives"),
+    ]
+
+    template = "content/objectives_page.html"
