@@ -43,6 +43,7 @@ body {
   padding: 12px 20px;
   display: flex;
   align-items: center;
+  min-height: 70px; 
   justify-content: space-between;
 }
 
@@ -60,7 +61,44 @@ body {
 .main-nav a:hover {
   text-decoration: underline;
 }
+.logo {
+  display: flex;
+  align-items: center;   /* ✅ THIS is the missing piece */
+}
+.logo img {
+  height: 70px;
+  display: block;        /* ✅ critical */
+}
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  height: 100%;
+}
+
+.site-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 16px;
+    align-items: center;
+   
+  }
+   .logo img {
+    height: 48px;
+  }
+  .main-nav {
+    display: none;
+  }
+}
 /* ================= HERO ================= */
 .hero {
   background: linear-gradient(135deg, #1c6fd5, #0a4fa3);
