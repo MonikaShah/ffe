@@ -206,7 +206,7 @@ body {
 .page-container {
   max-width: 800px;      /* optional, keeps content readable */
   margin: 0 auto;        /* center horizontally */
-  text-align: center;    /* center the title, links, and emojis */
+  text-align: left;    /* center the title, links, and emojis */
   padding: 20px;
 }
 
@@ -219,7 +219,8 @@ body {
 .rti-documents li {
   margin: 10px 0;        /* spacing between items */
   font-size: 18px;
-  display: inline-block;  /* keeps items centered nicely */
+  /* display: inline-block;   */
+  /* keeps items centered nicely */
 }
 
 /* ================= FOOTER ================= */
