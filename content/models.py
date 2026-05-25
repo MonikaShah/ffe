@@ -349,3 +349,54 @@ class ObjectivesPage(Page):
     ]
 
     template = "content/objectives_page.html"
+
+class CourtOrderDocument(Orderable):
+    page = ParentalKey(
+        'CourtOrderPage',
+        on_delete=models.CASCADE,
+        related_name='court_order_documents'
+    )
+
+    title = models.CharField(
+        max_length=255,
+        help_text="Document title shown to users"
+    )
+
+    document = models.ForeignKey(
+        Document,
+        on_delete=models.CASCADE,
+        related_name='+',
+        blank=True,
+        null=True,
+        help_text="Upload PDF/document (optional)"
+    )
+
+    external_url = models.URLField(
+        blank=True,
+        null=True,
+        help_text="External website/document link (optional)"
+    )
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('document'),
+        FieldPanel('external_url'),
+    ]
+
+
+class CourtOrderPage(Page):
+    custom_title = models.CharField(
+        max_length=255,
+        help_text="Title displayed on the page"
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel('custom_title'),
+        InlinePanel(
+            'court_order_documents',
+            label="Court Order Documents"
+        ),
+    ]
+
+    parent_page_types = ["wagtailcore.Page"]
+    subpage_types = []
