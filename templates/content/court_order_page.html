@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="court-orders">
+
+  <div class="page-container">
+
+    <h1>{{ page.custom_title }}</h1>
+
+    {% if page.court_order_documents.all %}
+      <ul class="court-order-documents">
+
+        {% for item in page.court_order_documents.all %}
+          <li class="document-item">
+
+            <!-- PDF / Uploaded Document -->
+            {% if item.document %}
+              <a href="{{ item.document.url }}" target="_blank">
+                {{ item.title }}
+              </a>
+            {% endif %}
+
+            <!-- External URL -->
+            {% if item.external_url %}
+              <div class="external-link">
+                <a href="{{ item.external_url }}" target="_blank">
+                  View Link
+                </a>
+              </div>
+            {% endif %}
+
+          </li>
+        {% endfor %}
+
+      </ul>
+    {% else %}
+      <p>No court orders uploaded.</p>
+    {% endif %}
+
+  </div>
+
+</section>
+{% endblock %}
