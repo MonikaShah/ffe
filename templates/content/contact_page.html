@@ -3,6 +3,58 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block content %}
+<style>
+.contact-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    font-size:15px;
+}
+
+.contact-table th{
+    background:#0d4ea3;
+    color:#fff;
+    padding:12px;
+    text-align:left;
+    border:2px solid #0d4ea3;
+}
+
+.contact-table td{
+    padding:10px 12px;
+    border:1px solid #cfd8e3;
+    vertical-align:middle;
+    text-align:left;
+}
+
+.contact-table tr:nth-child(even){
+    background:#f8fbff;
+}
+
+.contact-table tr:hover{
+    background:#eef5ff;
+}
+
+.contact-table a{
+    color:#0d4ea3;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-table a:hover{
+    text-decoration:underline;
+}
+
+@media (max-width:768px){
+    .contact-table{
+        font-size:13px;
+    }
+
+    .contact-table th,
+    .contact-table td{
+        padding:8px;
+    }
+}
+</style>
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-5">
@@ -16,7 +68,7 @@
           <!-- Contact Details -->
           <div class="text-center mb-4">
             <strong>Forum for Fairness in Education</strong><br>
-            14A, Dr. M. C. Jawle Road,<br>
+            14A, Dr. M. C. Jawlea Road,<br>
             Dadar West, Mumbai – 400028<br>
             <br>
             <a href="mailto:ffemumbai@gmail.com">
@@ -24,4 +76,111 @@
             </a>
           </div>
           <br><br>
+          <hr class="my-4">
+
+<h4 class="text-center mb-4">Area-wise Contacts</h4>
+
+<div class="table-responsive">
+    <table class="contact-table">
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Name & Designation</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dadar</td>
+                <td>Jayant Jain (President)</td>
+                <td><a href="tel:8080224000">8080224000</a></td>
+            </tr>
+            <tr>
+                <td>Kharghar</td>
+                <td>Sunil Acharekar (Vice President)</td>
+                <td><a href="tel:+919867799952">98677 99952</a></td>
+            </tr>
+            <tr>
+                <td>Panvel</td>
+                <td>Mahesh Suvarna (Vice President)</td>
+                <td><a href="tel:+918108270333">81082 70333</a></td>
+            </tr>
+            <tr>
+                <td>Kandivali</td>
+                <td>Vipul Shah (Secretary)</td>
+                <td><a href="tel:+917977180631">79771 80631</a></td>
+            </tr>
+            <tr>
+                <td>Bhayander</td>
+                <td>Hemant Panchal (Treasurer)</td>
+                <td><a href="tel:+918108415413">81084 15413</a></td>
+            </tr>
+            <tr>
+                <td>Parel</td>
+                <td>Raju Tirmalle (Joint Secretary)</td>
+                <td><a href="tel:9821257607">9821257607</a></td>
+            </tr>
+            <tr>
+                <td>Naigaon / Parel</td>
+                <td>Sunil Mistry (Joint Treasurer)</td>
+                <td><a href="tel:+919820363687">98203 63687</a></td>
+            </tr>
+            <tr>
+                <td>Nerul</td>
+                <td>Anuj Kumar Pandey</td>
+                <td><a href="tel:+919869470582">98694 70582</a></td>
+            </tr>
+            <tr>
+                <td>Vikhroli</td>
+                <td>Maitri Sagvekar</td>
+                <td><a href="tel:+918369559895">83695 59895</a></td>
+            </tr>
+            <tr>
+                <td>Thane</td>
+                <td>Shailendra Shripannawar</td>
+                <td><a href="tel:+919867364615">98673 64615</a></td>
+            </tr>
+            <tr>
+                <td>Goregaon</td>
+                <td>Priti Raut</td>
+                <td><a href="tel:+918108243344">81082 43344</a></td>
+            </tr>
+            <tr>
+                <td>Airoli</td>
+                <td>Adv. Jalpa Shah</td>
+                <td><a href="tel:+919930155606">99301 55606</a></td>
+            </tr>
+            <tr>
+                <td>Andheri</td>
+                <td>Vasudev Pednekar</td>
+                <td><a href="tel:+919820685692">98206 85692</a></td>
+            </tr>
+            <tr>
+                <td>Alibaug</td>
+                <td>Nimish Patab</td>
+                <td><a href="tel:9881230685">98812 30685</a></td>
+            </tr>
+            <tr>
+                <td>Chembur</td>
+                <td>Bhagwan Dhumal</td>
+                <td><a href="tel:+918779584515">87795 84515</a></td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Dr. Rajendra Chaudhari</td>
+                <td><a href="tel:+919969541148">99695 41148</a></td>
+            </tr>
+            <tr>
+                <td>Panvel</td>
+                <td>Rajesh</td>
+                <td><a href="tel:+919324226211">93242 26211</a></td>
+            </tr>
+            <tr>
+                <td>Dombivli</td>
+                <td>Preeti Dolas</td>
+                <td><a href="tel:+919821837475">98218 37475</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
